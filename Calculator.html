@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <style>
+        #main{width: 300px; height: 280px; background-color: black;}
+        input{width: 20%;height: 40px; font-size: 20px; margin: 6px;}
+        #up{width: 96%;height:50px; background-color:silver;}
+
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <form name="fo">
+          <input type="text" name="cal" placeholder="0" id="up"> <br>
+          <input type="button" value="1" onclick="fo.cal.value+=1">
+          <input type="button" value="2" onclick="fo.cal.value+=2">
+          <input type="button" value="3" onclick="fo.cal.value+=3">
+          <input type="button" value="+" onclick="add()"> <br>
+          
+          <input type="button" value="4" onclick="fo.cal.value+=4">
+          <input type="button" value="5" onclick="fo.cal.value+=5">
+          <input type="button" value="6" onclick="fo.cal.value+=6">
+          <input type="button" value="-" onclick="sub()"> <br>
+         
+          <input type="button" value="7" onclick="fo.cal.value+=7">
+          <input type="button" value="8" onclick="fo.cal.value+=8">
+          <input type="button" value="9" onclick="fo.cal.value+=9">
+          <input type="button" value="/" onclick="div()"> <br>
+          
+          <input type="button" value="c" onclick="fo.cal.value=''">
+          <input type="button" value="0" onclick="fo.cal.value+=0">
+          <input type="button" value="=" onclick="fo.cal.value=eval(fo.cal.value)">
+          <input type="button" value="x" onclick="mul()"> <br>
+      </form>
+    </div>
+    <script>
+        function add(){
+            var a=0,b=0;
+            a=fo.cal.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                fo.cal.value=a.substring(0,a.length-1);
+                fo.cal.value+='+';
+            }
+            else{
+                fo.cal.value+='+';
+            }
+        }
+        function sub(){
+            var a=0,b=0;
+            a=fo.cal.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                fo.cal.value=a.substring(0,a.length-1);
+                fo.cal.value+='-';
+            }
+            else{
+                fo.cal.value+='-';
+            }
+        }
+        function div(){
+            var a=0,b=0;
+            a=fo.cal.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                fo.cal.value=a.substring(0,a.length-1);
+                fo.cal.value+='/';
+            }
+            else{
+                fo.cal.value+='/';
+            }
+        }
+        function mul(){
+            var a=0,b=0;
+            a=fo.cal.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                fo.cal.value=a.substring(0,a.length-1);
+                fo.cal.value+='*';
+            }
+            else{
+                fo.cal.value+='*';
+            }
+        }
+    </script>
+  </body>
+</html>
